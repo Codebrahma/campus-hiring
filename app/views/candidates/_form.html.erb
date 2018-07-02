@@ -1,0 +1,38 @@
+<%= form_with(model: candidate, local: true) do |form| %>
+  <% if candidate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+
+      <ul>
+      <% candidate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :candidate_name, class: 'form-control', placeholder: 'My name' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :email %>
+    <%= form.email_field :email, id: :candidate_email, class: 'form-control', placeholder: 'test@example.com' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :circle_problem_js_fiddle_link %>
+    <%= form.text_area :circle_problem_js_fiddle_link, id: :candidate_circle_problem_js_fiddle_link, class: 'form-control', placeholder: 'https://jsfiddle.net/codekamesh/mnvwx6ok/' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :parent_child_problem_js_fiddle_link %>
+    <%= form.text_area :parent_child_problem_js_fiddle_link, id: :candidate_parent_child_problem_js_fiddle_link, class: 'form-control', placeholder: 'https://jsfiddle.net/codekamesh/mnvwx6ok/'  %>
+  </div>
+
+  <div class="actions form-group text-center" style="margin-top: 20px;">
+    <%= form.submit "Register", class: 'btn btn-lg btn-success' %>
+    <%= link_to 'Back', candidates_path, class: 'btn btn-lg btn-danger', style: 'color: white;' %>
+  </div>
+<% end %>

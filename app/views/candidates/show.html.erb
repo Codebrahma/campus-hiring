@@ -1,0 +1,27 @@
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p class="form-group">
+      <strong>Name:</strong>
+      <%= @candidate.name %>
+    </p>
+
+    <p class="form-group">
+      <strong>Email:</strong>
+      <%= @candidate.email %>
+    </p>
+
+    <p class="form-group">
+      <strong>Circle problem js fiddle link:</strong>
+      <%= @candidate.circle_problem_js_fiddle_link %>
+    </p>
+
+    <p class="form-group">
+      <strong>Parent child problem js fiddle link:</strong>
+      <%= @candidate.parent_child_problem_js_fiddle_link %>
+    </p>
+  </div>
+</div>
