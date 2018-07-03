@@ -21,13 +21,19 @@
     <%= form.email_field :email, id: :candidate_email, class: 'form-control', placeholder: 'test@example.com' %>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :circle_problem_js_fiddle_link %>
+  <div class="field form-group" style="margin-top: 25px;">
+    <b><p>Problem 1</p></b>
+    <p>Fork <a href="https://jsfiddle.net/m5ykd1tL/4/">this</a> fiddle and solve the problem given below in the video</p>
+    <iframe src="https://player.vimeo.com/video/278121847?color=ffd54c&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+    <%= form.label :circle_problem_js_fiddle_link, "Problem 1 - solution link(JSFiddle)" %>
     <%= form.text_area :circle_problem_js_fiddle_link, id: :candidate_circle_problem_js_fiddle_link, class: 'form-control', placeholder: 'https://jsfiddle.net/codekamesh/mnvwx6ok/' %>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :parent_child_problem_js_fiddle_link %>
+  <div class="field form-group" style="margin-top: 25px;">
+    <b><p>Problem 2</p></b>
+    <p>Fork <a href="https://jsfiddle.net/6ojdz3ts/7/">this</a> fiddle and solve the problem given below in the video</p>
+    <iframe src="https://player.vimeo.com/video/278121861?color=ffd54c&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+    <%= form.label :parent_child_problem_js_fiddle_link, "Problem 2 - solution link(JSFiddle)" %>
     <%= form.text_area :parent_child_problem_js_fiddle_link, id: :candidate_parent_child_problem_js_fiddle_link, class: 'form-control', placeholder: 'https://jsfiddle.net/codekamesh/mnvwx6ok/'  %>
   </div>
 
