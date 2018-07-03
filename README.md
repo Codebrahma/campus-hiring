@@ -10,3 +10,5 @@ Run
   1. `cd tests`
   2. `npm install`
   3. `node index.js`
+  4. All done. you should get output similar to the below.
+  ![alt sample-output](public/output.png)
