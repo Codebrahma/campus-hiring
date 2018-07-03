@@ -1,24 +1,12 @@
-# README
+### To Run selenium tests
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Prerequisites
+  1. Download the latest chrome driver from http://chromedriver.storage.googleapis.com/index.html and extract it
+  2. Make sure that chromedrive driver can be found on the current PATH.
 
-Things you may want to cover:
+#### Steps:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run
+  1. `cd tests`
+  2. `npm install`
+  3. `node index.js`
