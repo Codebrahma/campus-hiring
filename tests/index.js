@@ -6,6 +6,10 @@ const driver = new Builder()
   .forBrowser('chrome')
   .build();
 
+const waitForTitle = () => {
+  return driver.getTitle().then((title) => title.includes('JSFiddle'));
+}
+
 const filterCandidates = (candidates) => {
   candidates.forEach((candidate) => {
     let solution1Passed = false;
@@ -14,7 +18,7 @@ const filterCandidates = (candidates) => {
     const checkSolution1 = () => {
       let borderRadius, backgroundColor;
 
-      driver.switchTo().frame(driver.findElement(By.tagName('iframe')));
+      driver.switchTo().frame(driver.findElement(By.name('result')));
       var square = driver.findElement(By.id('square'));
       var button = driver.findElement(By.id('button'));
 
@@ -41,13 +45,13 @@ const filterCandidates = (candidates) => {
           throw new Error('Background color is not changed on clicking the button');
         });
 
-      return driver.wait(until.titleIs('JSFiddle'), 1500);
+      return driver.wait(waitForTitle, 1500);
     }
 
     const checkSolution2 = () => {
       let borderRadius, backgroundColor;
 
-      driver.switchTo().frame(driver.findElement(By.tagName('iframe')));
+      driver.switchTo().frame(driver.findElement(By.name('result')));
       const parent = driver.findElement(By.className('parent'));
       let elementsLength = 0;
 
@@ -79,7 +83,7 @@ const filterCandidates = (candidates) => {
         throw new Error('Not adding children on clicking parent');
       });
 
-      return driver.wait(until.titleIs('JSFiddle'), 1500);
+      return driver.wait(waitForTitle, 1500);
     }
 
     const passSolution1 = () => {
@@ -96,7 +100,7 @@ const filterCandidates = (candidates) => {
 
     const problem1 = () => (
       new Promise((resolve, reject) => {
-        driver.get('https://fiddle.jshell.net/ay2xv5s9/show/light/');
+        driver.get(candidate.circle_problem_js_fiddle_link);
         driver.wait(checkSolution1, 2500).then(resolve, reject);
       })
       .then(passSolution1)
@@ -105,7 +109,7 @@ const filterCandidates = (candidates) => {
 
     const problem2 = () => (
       new Promise((resolve, reject) => {
-        driver.get('https://fiddle.jshell.net/94sxgzkp/show/light/');
+        driver.get(candidate.parent_child_problem_js_fiddle_link);
         driver.wait(checkSolution2, 2500).then(resolve, reject);
       })
       .then(passSolution2)
